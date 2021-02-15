@@ -1,23 +1,21 @@
 .card {
   width: 200px;
-  height: 400px;
+  height: 100%;
   border: 1px solid #f3f3f3;
-  display: flex ;
-  flex-direction: column;
+  display: grid;
 
   &_row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: auto;
+    grid-area: rows;
+    display: grid;
     justify-content: center;
-    margin-bottom: 53px;
+    grid-auto-flow: column;
+    margin-bottom: 50px;
   }
 
   &__img {
     width: 166px;
     height: 170px;
-    margin: 14px auto 30px;
+    margin: 12px auto 27px;
     padding: 15px 0;
     transition: transform 1s;
     border: 3px solid transparent;
@@ -44,17 +42,22 @@
   &__kod {
     font-size: 11px;
     font-weight: 400;
-    margin: 0 0 15px 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 14px;
+    line-height: 13px;
   }
 
   &__review {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
-    margin: 0 14px 20px;
+    margin: 0 14px 22px;
   }
 
   &__stars {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
   }
 
   &__star {
@@ -73,15 +76,14 @@
   &__feedback {
     font-size: 11px;
     margin: 0;
-    align-items: center;
-    display: flex;
+    align-self: center;
   }
 
   &__price-container {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
     justify-content: space-between;
-    align-items: center;
-    margin: 0 14px 20px;
+    margin: 0 14px;
   }
 
   &__price-info {
@@ -89,7 +91,7 @@
     font-size: 11px;
     font-weight: 400;
     line-height: 13px;
-    padding-top: 3px;
+    align-self: center;
   }
 
   &__price {
@@ -99,7 +101,7 @@
   }
 
   &__btn {
-    display: flex;
+    display: grid;
     height: 40px;
     width: 170px;
     background: #00acdc;
@@ -112,8 +114,9 @@
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
-    margin-left: 14px;
+    margin: 18px auto 15px;
     line-height: 16px;
+    transition: color 300ms, background 300ms;
 
     &:hover {
       background: transparent;
