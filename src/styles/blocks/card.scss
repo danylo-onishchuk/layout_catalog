@@ -71,10 +71,8 @@
 
   @for $i from 1 through 5 {
     .card__stars--#{$i} {
-      @for $j from 1 through $i {
-        .card__star:nth-child(-n+#{$i}) {
-          background-image: url("/images/star-active.svg");
-        }
+      .card__star:nth-child(-n+#{$i}) {
+        background-image: url("/images/star-active.svg");
       }
     }
   }
