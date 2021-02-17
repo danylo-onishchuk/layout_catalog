@@ -39,7 +39,7 @@
     font-weight: 500;
   }
 
-  &__kod {
+  &__info {
     font-size: 11px;
     font-weight: 400;
     margin-top: 0;
@@ -55,7 +55,7 @@
     margin: 0 14px 22px;
   }
 
-  &__stars {
+  &__stars--4 {
     display: grid;
     grid-auto-flow: column;
   }
@@ -69,8 +69,14 @@
     background-position: center;
   }
 
-  &__star:nth-child(-n+4) {
-    background-image: url("/images/star-active.svg");
+  @for $i from 1 through 5 {
+    .card__stars--#{$i} {
+      @for $j from 1 through $i {
+        .card__star:nth-child(-n+#{$i}) {
+          background-image: url("/images/star-active.svg");
+        }
+      }
+    }
   }
 
   &__feedback {
